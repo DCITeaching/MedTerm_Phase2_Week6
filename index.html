@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 6 — Muscular System | DC International Teaching Hospital</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#1A5C2E;--primary-d:#0D3318;--primary-l:#EBF5EE;--primary-m:#3D8B57;--gold:#C49A2A;--gold-l:#FDF8EC;--navy:#1A1A2E;--cream:#FAF7F2;--dark:#1A1A1A;--gray:#595959;--lgray:#F0EEEB;--white:#FFFFFF;--correct:#1A5C2E;--wrong:#8B1A1A;--shadow:0 4px 24px rgba(0,0,0,0.09);--shadow-lg:0 8px 40px rgba(0,0,0,0.14);}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);font-size:16px;line-height:1.7;}
+.site-header{background:var(--navy);color:white;position:sticky;top:0;z-index:200;box-shadow:0 2px 20px rgba(0,0,0,0.3);}
+.header-inner{max-width:1100px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.header-title{font-family:'DM Serif Display',serif;font-size:1.2rem;color:var(--gold);}
+.header-sub{font-size:0.75rem;color:rgba(255,255,255,0.5);margin-top:2px;}
+.week-badge{background:var(--primary);color:white;font-size:0.7rem;font-weight:700;padding:5px 12px;border-radius:20px;letter-spacing:0.05em;}
+.lesson-nav{background:rgba(255,255,255,0.06);border-top:1px solid rgba(255,255,255,0.08);display:flex;overflow-x:auto;}
+.nav-btn{padding:10px 16px;background:none;border:none;color:rgba(255,255,255,0.5);font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:500;cursor:pointer;transition:all .2s;border-bottom:3px solid transparent;white-space:nowrap;}
+.nav-btn:hover{color:rgba(255,255,255,0.85);}
+.nav-btn.active{color:var(--gold);border-bottom-color:var(--gold);background:rgba(196,154,42,0.08);}
+.main{max-width:1100px;margin:0 auto;padding:36px 24px 80px;}
+.panel{display:none;animation:fadeIn .25s ease;}
+.panel.active{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+.lesson-hero{background:var(--primary-d);border-radius:16px;padding:40px;color:white;margin-bottom:32px;position:relative;overflow:hidden;}
+.lesson-hero::after{content:'';position:absolute;right:-40px;bottom:-60px;width:220px;height:220px;border-radius:50%;background:rgba(196,154,42,0.08);}
+.hero-eyebrow{font-size:0.7rem;font-weight:700;letter-spacing:.15em;color:var(--gold);text-transform:uppercase;margin-bottom:10px;}
+.lesson-hero h1{font-family:'DM Serif Display',serif;font-size:2rem;line-height:1.15;margin-bottom:12px;}
+.lesson-hero p{color:rgba(255,255,255,0.7);font-size:0.95rem;max-width:560px;}
+.hero-objectives{margin-top:28px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.obj-card{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:14px 16px;}
+.obj-label{font-size:0.65rem;font-weight:700;letter-spacing:.12em;color:var(--gold);text-transform:uppercase;margin-bottom:6px;}
+.obj-text{font-size:0.82rem;color:rgba(255,255,255,0.8);line-height:1.5;}
+.section-title{font-family:'DM Serif Display',serif;font-size:1.6rem;color:var(--dark);margin-bottom:6px;}
+.section-sub{font-size:0.875rem;color:var(--gray);margin-bottom:28px;}
+.section-divider{height:3px;background:linear-gradient(90deg,var(--primary),var(--gold));border-radius:2px;margin-bottom:28px;}
+.reading-article{background:white;border-radius:16px;box-shadow:var(--shadow);overflow:hidden;margin-bottom:28px;}
+.article-chapter{background:var(--primary);color:white;padding:20px 32px;}
+.article-chapter .ch-label{font-size:0.68rem;font-weight:700;letter-spacing:.15em;color:rgba(255,255,255,0.6);text-transform:uppercase;margin-bottom:4px;}
+.article-chapter h2{font-family:'DM Serif Display',serif;font-size:1.5rem;}
+.article-body{padding:32px;}
+.article-body p{font-size:0.95rem;color:var(--dark);margin-bottom:18px;line-height:1.75;}
+.article-body h3{font-family:'DM Serif Display',serif;font-size:1.15rem;color:var(--primary);margin:28px 0 12px;}
+.article-body ul{margin:0 0 18px 24px;}
+.article-body ul li{font-size:0.93rem;color:var(--dark);margin-bottom:8px;line-height:1.6;}
+.article-body .callout{background:var(--primary-l);border-left:4px solid var(--primary);border-radius:0 10px 10px 0;padding:16px 20px;margin:24px 0;font-size:0.9rem;color:var(--primary-d);}
+.article-body .callout strong{display:block;margin-bottom:4px;font-size:0.8rem;letter-spacing:.08em;text-transform:uppercase;}
+.article-body .clinical-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:0.875rem;}
+.article-body .clinical-table th{background:var(--primary);color:white;padding:10px 14px;text-align:left;font-weight:600;}
+.article-body .clinical-table td{padding:10px 14px;border-bottom:1px solid var(--lgray);}
+.article-body .clinical-table tr:nth-child(even) td{background:var(--primary-l);}
+.ht{color:var(--primary);font-weight:600;border-bottom:2px dotted var(--primary);cursor:help;position:relative;display:inline;}
+.ht-tip{display:none;position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:var(--navy);color:white;border-radius:10px;padding:12px 16px;width:260px;font-size:0.8rem;line-height:1.5;z-index:999;box-shadow:var(--shadow-lg);pointer-events:none;}
+.ht-tip::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:var(--navy);}
+.ht-tip .tip-root{color:var(--gold);font-family:'DM Mono',monospace;font-size:0.75rem;display:block;margin-bottom:4px;}
+.ht:hover .ht-tip{display:block;}
+.cfu-block{background:white;border-radius:14px;padding:28px;box-shadow:var(--shadow);margin-bottom:20px;border-left:4px solid var(--primary);}
+.cfu-label{font-size:0.68rem;font-weight:700;letter-spacing:.15em;color:var(--primary);text-transform:uppercase;margin-bottom:8px;}
+.cfu-question{font-size:1rem;font-weight:600;color:var(--dark);margin-bottom:18px;line-height:1.4;}
+.cfu-choices{display:flex;flex-direction:column;gap:8px;}
+.cfu-choice{padding:11px 16px;border-radius:8px;border:2px solid var(--lgray);background:white;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:0.9rem;text-align:left;transition:all .18s;color:var(--dark);}
+.cfu-choice:hover:not(:disabled){border-color:var(--primary);background:var(--primary-l);}
+.cfu-choice.correct{background:#e8f5e9;border-color:var(--correct);color:var(--correct);font-weight:600;}
+.cfu-choice.wrong{background:#ffebee;border-color:var(--wrong);color:var(--wrong);}
+.cfu-choice.dimmed{opacity:.4;}
+.cfu-choice:disabled{cursor:default;}
+.cfu-feedback{display:none;margin-top:14px;padding:14px 16px;border-radius:8px;font-size:0.875rem;line-height:1.55;}
+.cfu-feedback.show{display:block;}
+.cfu-feedback.ok{background:#e8f5e9;color:#1b5e20;border-left:3px solid var(--correct);}
+.cfu-feedback.no{background:#ffebee;color:#7f1d1d;border-left:3px solid var(--wrong);}
+.cfu-retry{margin-top:10px;padding:6px 14px;border-radius:6px;border:none;background:var(--lgray);color:var(--gray);font-family:'DM Sans',sans-serif;font-size:0.8rem;font-weight:600;cursor:pointer;}
+.cfu-score-bar{background:white;border-radius:12px;padding:16px 24px;margin-bottom:24px;box-shadow:var(--shadow);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+.cfu-score-num{font-family:'DM Serif Display',serif;font-size:1.6rem;color:var(--navy);}
+.cfu-score-lbl{font-size:0.8rem;color:var(--gray);}
+.game-area{background:white;border-radius:16px;padding:32px;box-shadow:var(--shadow);margin-bottom:28px;}
+.game-tabs{display:flex;gap:8px;margin-bottom:24px;}
+.game-tab{padding:8px 18px;border-radius:24px;border:2px solid var(--lgray);background:white;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:600;cursor:pointer;color:var(--gray);transition:all .18s;}
+.game-tab.active{background:var(--primary);color:white;border-color:var(--primary);}
+.game-panel{display:none;}
+.game-panel.active{display:block;}
+.match-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px;}
+.match-col h4{font-size:0.75rem;font-weight:700;letter-spacing:.1em;color:var(--gray);text-transform:uppercase;margin-bottom:10px;}
+.match-item{padding:12px 16px;border-radius:8px;border:2px solid var(--lgray);background:white;cursor:pointer;font-size:0.875rem;transition:all .18s;line-height:1.4;}
+.match-item:hover{border-color:var(--primary);}
+.match-item.selected{background:var(--primary);color:white;border-color:var(--primary);}
+.match-item.matched{background:#e8f5e9;border-color:var(--correct);color:var(--correct);cursor:default;font-weight:600;}
+.match-item.wrong-flash{background:#ffebee;border-color:var(--wrong);animation:shake .4s ease;}
+@keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-6px);}75%{transform:translateX(6px);}}
+.match-score{font-family:'DM Serif Display',serif;font-size:1.4rem;color:var(--navy);margin-bottom:16px;}
+.fill-item{background:var(--lgray);border-radius:10px;padding:18px 20px;margin-bottom:12px;}
+.fill-sentence{font-size:0.95rem;color:var(--dark);margin-bottom:10px;line-height:1.6;}
+.fill-input{padding:8px 12px;border-radius:6px;border:2px solid var(--lgray);font-family:'DM Sans',sans-serif;font-size:0.9rem;width:220px;transition:border-color .18s;}
+.fill-input:focus{outline:none;border-color:var(--primary);}
+.fill-input.correct-in{border-color:var(--correct);background:#e8f5e9;color:var(--correct);}
+.fill-input.wrong-in{border-color:var(--wrong);background:#ffebee;color:var(--wrong);}
+.fill-check{padding:8px 18px;border-radius:6px;border:none;background:var(--primary);color:white;font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:600;cursor:pointer;margin-left:8px;}
+.fill-hint{font-size:0.8rem;color:var(--gray);margin-top:6px;}
+.decode-item{background:white;border:2px solid var(--lgray);border-radius:12px;padding:20px 24px;margin-bottom:14px;}
+.decode-term{font-family:'DM Serif Display',serif;font-size:1.5rem;font-style:italic;color:var(--primary);margin-bottom:8px;}
+.decode-parts{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;}
+.decode-part{padding:4px 12px;border-radius:20px;font-family:'DM Mono',monospace;font-size:0.78rem;font-weight:500;}
+.dp-prefix{background:#e3f2fd;color:#0d47a1;}
+.dp-root{background:var(--primary-l);color:var(--primary);}
+.dp-suffix{background:#f3e5f5;color:#6a1b9a;}
+.decode-reveal{padding:8px 16px;border-radius:6px;border:2px solid var(--primary);background:white;color:var(--primary);font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:600;cursor:pointer;transition:all .18s;}
+.decode-reveal:hover{background:var(--primary);color:white;}
+.decode-answer{display:none;margin-top:12px;padding:12px 16px;background:var(--primary-l);border-radius:8px;font-size:0.875rem;color:var(--primary-d);line-height:1.55;}
+.decode-answer.show{display:block;}
+.resources-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:28px;}
+.resource-card{background:white;border-radius:14px;padding:22px;box-shadow:var(--shadow);transition:all .2s;text-decoration:none;display:block;border-top:4px solid var(--primary);}
+.resource-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg);}
+.rc-type{font-size:0.65rem;font-weight:700;letter-spacing:.12em;color:var(--primary);text-transform:uppercase;margin-bottom:8px;}
+.rc-title{font-family:'DM Serif Display',serif;font-size:1rem;color:var(--dark);margin-bottom:6px;line-height:1.3;}
+.rc-desc{font-size:0.82rem;color:var(--gray);line-height:1.5;}
+.rc-link{font-size:0.78rem;color:var(--primary);font-weight:600;margin-top:10px;display:block;}
+.scenario-card{background:var(--navy);border-radius:16px;padding:32px;color:white;margin-bottom:24px;}
+.scenario-eyebrow{font-size:0.68rem;font-weight:700;letter-spacing:.15em;color:var(--gold);text-transform:uppercase;margin-bottom:10px;}
+.scenario-card h2{font-family:'DM Serif Display',serif;font-size:1.4rem;margin-bottom:14px;}
+.scenario-card p{font-size:0.93rem;color:rgba(255,255,255,0.8);line-height:1.7;}
+.rom-table{width:100%;border-collapse:collapse;margin-top:20px;font-size:0.875rem;}
+.rom-table th{background:rgba(255,255,255,0.1);color:var(--gold);padding:10px 14px;text-align:left;font-weight:600;}
+.rom-table td{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.85);}
+.rom-deficit{color:#ff9800;font-weight:600;}
+.task-card{background:white;border-radius:14px;padding:26px;box-shadow:var(--shadow);margin-bottom:16px;}
+.task-num{font-size:0.68rem;font-weight:700;letter-spacing:.15em;color:var(--primary);text-transform:uppercase;margin-bottom:8px;}
+.task-q{font-size:0.98rem;font-weight:600;color:var(--dark);margin-bottom:14px;line-height:1.4;}
+.task-textarea{width:100%;min-height:80px;padding:12px 14px;border-radius:8px;border:2px solid var(--lgray);font-family:'DM Sans',sans-serif;font-size:0.9rem;color:var(--dark);background:var(--cream);resize:vertical;transition:border-color .18s;}
+.task-textarea:focus{outline:none;border-color:var(--primary);background:white;}
+.task-hint-btn{padding:6px 14px;border-radius:6px;border:1.5px solid var(--primary);background:white;color:var(--primary);font-family:'DM Sans',sans-serif;font-size:0.8rem;font-weight:600;cursor:pointer;margin-top:10px;}
+.task-hint{display:none;margin-top:10px;padding:12px 16px;background:var(--primary-l);border-radius:8px;font-size:0.85rem;color:var(--primary-d);line-height:1.55;}
+.task-hint.show{display:block;}
+
+/* Movement term demo cards */
+.movement-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:20px 0;}
+.move-card{background:var(--primary-l);border-radius:12px;padding:16px;text-align:center;border:2px solid transparent;cursor:pointer;transition:all .2s;}
+.move-card:hover,.move-card.active{border-color:var(--primary);background:var(--primary);color:white;}
+.move-card:hover .move-term,.move-card.active .move-term{color:var(--gold);}
+.move-term{font-family:'DM Serif Display',serif;font-size:1rem;color:var(--primary);margin-bottom:4px;}
+.move-icon{font-size:1.4rem;margin-bottom:6px;}
+.move-def{font-size:0.78rem;color:var(--gray);line-height:1.4;}
+.move-card:hover .move-def,.move-card.active .move-def{color:rgba(255,255,255,0.8);}
+
+@media(max-width:700px){.hero-objectives{grid-template-columns:1fr;}.resources-grid{grid-template-columns:1fr;}.match-grid{grid-template-columns:1fr;}.movement-grid{grid-template-columns:repeat(2,1fr);}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <div>
+      <div class="header-title">DC International Teaching Hospital</div>
+      <div class="header-sub">Health Science II · Phase 2: Trauma & Structure</div>
+    </div>
+    <div class="week-badge">WEEK 6 · MUSCULAR SYSTEM</div>
+  </div>
+  <nav class="lesson-nav">
+    <button class="nav-btn active" onclick="showPanel('reading')">📖 Reading</button>
+    <button class="nav-btn" onclick="showPanel('cfu')">✅ Check for Understanding</button>
+    <button class="nav-btn" onclick="showPanel('vocab')">🎮 Vocabulary Games</button>
+    <button class="nav-btn" onclick="showPanel('resources')">🔗 Resources</button>
+    <button class="nav-btn" onclick="showPanel('apply')">🏥 Apply It</button>
+  </nav>
+</header>
+
+<main class="main">
+
+<!-- READING -->
+<div id="reading" class="panel active">
+  <div class="lesson-hero">
+    <div class="hero-eyebrow">Lessons 16–18 · Grand Rounds + Goniometer Lab + Rotation A Boards</div>
+    <h1>The Muscular System:<br>Movement, Assessment & Documentation</h1>
+    <p>Movement terminology is the shared language of physical therapy, sports medicine, nursing, and surgical documentation. This reading covers muscle types, movement terms, ROM assessment, and the clinical vocabulary you need to document every musculoskeletal encounter precisely.</p>
+    <div class="hero-objectives">
+      <div class="obj-card"><div class="obj-label">What</div><div class="obj-text">Classify 3 muscle types, define 8 movement terms, perform bilateral ROM with goniometer, document AROM/PROM distinction</div></div>
+      <div class="obj-card"><div class="obj-label">Why</div><div class="obj-text">Accurate ROM language prevents errors in clinical handoff, insurance authorization, and legal documentation — and is a scored HOSA Sports Medicine skill</div></div>
+      <div class="obj-card"><div class="obj-label">How Assessed</div><div class="obj-text">EHR ROM documentation · Boards Section A (movement vignettes) · Section C (atrophy/hypertrophy short answer) · Section D SOAP note (Jordan K. ankle)</div></div>
+    </div>
+  </div>
+
+  <div class="reading-article">
+    <div class="article-chapter"><div class="ch-label">Chapter 1 · Lesson 16</div><h2>Three Types of Muscle Tissue: Location, Control, Function</h2></div>
+    <div class="article-body">
+      <p>Before you can document any muscular finding, you need to know which type of muscle you're dealing with — because the clinical implications differ significantly. The three muscle types are distinguished by their location, appearance, and the type of nervous system control they operate under.</p>
+
+      <h3>Skeletal Muscle — The Voluntary Mover</h3>
+      <p><span class="ht">Skeletal muscle<span class="ht-tip"><span class="tip-root">my/o (muscle) + muscul/o</span>Voluntary, striated muscle attached to bone via tendons. Controls all intentional movement. ~40% of body weight.</span></span> is what most people think of when they hear "muscle." It is voluntary (you consciously control it), striated (has visible bands under microscopy), and attached to bone via tendons. It controls every intentional movement — walking, lifting, breathing, speaking. In the clinical setting, you will assess skeletal muscle function through strength testing (graded 0–5), ROM assessment, and observation of gait. Key conditions: <span class="ht">myalgia<span class="ht-tip"><span class="tip-root">my/o (muscle) + -algia (pain)</span>Muscle pain. Can be localized (overuse) or diffuse (viral infection, statin medication side effect).</span></span>, <span class="ht">myopathy<span class="ht-tip"><span class="tip-root">my/o (muscle) + -pathy (disease)</span>Disease of muscle tissue. Can be genetic (muscular dystrophy) or acquired (inflammatory myopathy).</span></span>, <span class="ht">atrophy<span class="ht-tip"><span class="tip-root">a- (without) + troph/o (nourishment)</span>Decrease in muscle size and strength from disuse, immobilization, or denervation. Measurable as circumference difference.</span></span>, and <span class="ht">hypertrophy<span class="ht-tip"><span class="tip-root">hyper- (excessive) + troph/o (growth/nourishment)</span>Increase in muscle fiber size from repeated resistance training. Not pathological — an adaptive response.</span></span>.</p>
+
+      <h3>Smooth Muscle — The Involuntary System</h3>
+      <p><span class="ht">Smooth muscle<span class="ht-tip"><span class="tip-root">leiomy/o (smooth muscle)</span>Involuntary, non-striated muscle in walls of hollow organs — blood vessels, GI tract, bladder, uterus.</span></span> lines the walls of hollow organs — blood vessels, the GI tract, bladder, and uterus. It is involuntary (controlled by the autonomic nervous system) and non-striated (no visible bands). You cannot consciously control it, but drugs can: antispasmodics relax smooth muscle in the GI tract, vasodilators relax smooth muscle in blood vessel walls. Clinically relevant conditions: smooth muscle <span class="ht">spasm<span class="ht-tip"><span class="tip-root">Greek: spasmos (convulsion)</span>Involuntary sudden muscle contraction. In hollow organs: colic, ureteral spasm. In skeletal muscle: overuse or electrolyte imbalance.</span></span> causes colic (intestinal) or ureteral spasm (kidney stone pain).</p>
+
+      <h3>Cardiac Muscle — The Autorhythmic Heart</h3>
+      <p>Cardiac muscle is found exclusively in the heart wall (myocardium). Like skeletal muscle, it is striated. Like smooth muscle, it is involuntary. What makes it unique: it is <strong>autorhythmic</strong> — it generates its own electrical impulse (via the SA node) without needing a signal from the brain. It contracts approximately 100,000 times per day without fatigue. After a myocardial infarction (heart attack), cardiac muscle cells that die cannot regenerate — this is why MI damage is permanent, and why early intervention is critical.</p>
+
+      <table class="clinical-table">
+        <thead><tr><th>Muscle Type</th><th>Location</th><th>Control</th><th>Striated?</th><th>Key Clinical Condition</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Skeletal</strong></td><td>Attached to bones</td><td>Voluntary (somatic NS)</td><td>Yes</td><td>Atrophy, myopathy, strain</td></tr>
+          <tr><td><strong>Smooth</strong></td><td>Walls of hollow organs</td><td>Involuntary (autonomic NS)</td><td>No</td><td>Spasm, peristalsis disorders</td></tr>
+          <tr><td><strong>Cardiac</strong></td><td>Heart wall (myocardium)</td><td>Involuntary (autorhythmic)</td><td>Yes</td><td>MI — cells cannot regenerate</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Atrophy vs. Hypertrophy: Two Sides of the troph/o Coin</h3>
+      <p>These two conditions share the same root word — <em>troph/o</em> (nourishment/development) — but are clinical opposites. <span class="ht">Atrophy<span class="ht-tip"><span class="tip-root">a- (without) + troph/o (nourishment)</span>Muscle wasting. Decrease in muscle fiber size and strength from disuse, immobilization, denervation, or malnutrition.</span></span> is muscle wasting — the result of disuse (after casting), denervation (after nerve injury), or systemic disease. You measure it by comparing limb circumference: <em>"Quadriceps atrophy noted — right thigh circumference 2cm less than left."</em> <span class="ht">Hypertrophy<span class="ht-tip"><span class="tip-root">hyper- (excessive) + troph/o (growth)</span>Increase in muscle fiber size from repeated resistance loading. Normal adaptive response — not pathological.</span></span> is the adaptive increase in muscle fiber size from resistance training. It is not pathological — a competitive athlete's quad hypertrophy is documented as a finding, not a diagnosis.</p>
+
+      <div class="callout"><strong>Other Key Muscular Conditions</strong><strong><span class="ht">Tendinitis<span class="ht-tip"><span class="tip-root">tendin/o (tendon) + -itis</span>Inflammation of a tendon from repetitive overuse. Common: Achilles, patellar, rotator cuff tendons.</span></span></strong> — tendon inflammation from overuse (Achilles, patellar). <strong><span class="ht">Fasciitis<span class="ht-tip"><span class="tip-root">fasci/o (fascia) + -itis</span>Inflammation of the fascia — connective tissue sheath surrounding muscles. Plantar fasciitis = heel pain.</span></span></strong> — fascia inflammation (plantar fasciitis = heel pain worse with first steps). <strong><span class="ht">Contracture<span class="ht-tip"><span class="tip-root">Latin: contrahere (to draw together)</span>Permanent shortening of muscle or tendon from prolonged immobilization. Severely limits ROM.</span></span></strong> — permanent shortening from immobilization, limiting ROM. <strong>SITS</strong> — the four rotator cuff muscles: Supraspinatus, Infraspinatus, Teres minor, Subscapularis.</div>
+    </div>
+  </div>
+
+  <div class="reading-article">
+    <div class="article-chapter"><div class="ch-label">Chapter 2 · Lesson 16</div><h2>Eight Movement Terms: The Shared Language of Clinical Documentation</h2></div>
+    <div class="article-body">
+      <p>Every physical therapist, sports medicine clinician, orthopedic surgeon, and ER nurse uses these eight terms to describe joint motion. They are not interchangeable. Using the wrong term in a clinical note — "the patient demonstrated abduction when they bent their elbow" — creates documentation errors that affect treatment decisions, insurance authorization, and legal records.</p>
+
+      <table class="clinical-table">
+        <thead><tr><th>Term</th><th>Root Words</th><th>Definition</th><th>How to Demonstrate</th><th>Document As:</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Flexion</strong></td><td>flex- (bend) + -ion</td><td>Decreasing joint angle — bending</td><td>Bend elbow toward shoulder</td><td>"Elbow flexion 0–130°"</td></tr>
+          <tr><td><strong>Extension</strong></td><td>extens- (stretch) + -ion</td><td>Increasing joint angle — straightening</td><td>Straighten knee from bent</td><td>"Full knee extension — 0°"</td></tr>
+          <tr><td><strong>Abduction</strong></td><td>ab- (away) + duct/o</td><td>Movement AWAY from midline</td><td>Raise arm out to the side</td><td>"Shoulder abduction 0–165°"</td></tr>
+          <tr><td><strong>Adduction</strong></td><td>ad- (toward) + duct/o</td><td>Movement TOWARD midline</td><td>Bring arm back to body</td><td>"Hip adduction from 30°"</td></tr>
+          <tr><td><strong>Pronation</strong></td><td>Latin: pronare</td><td>Forearm rotation — palm DOWN</td><td>Turn hand face-down on desk</td><td>"Forearm pronation 0–75°"</td></tr>
+          <tr><td><strong>Supination</strong></td><td>Latin: supinare</td><td>Forearm rotation — palm UP</td><td>Hold a bowl of soup (palm up)</td><td>"Forearm supination 0–80°"</td></tr>
+          <tr><td><strong>Dorsiflexion</strong></td><td>dorsi- + flex-</td><td>Ankle — foot pulled UPWARD toward shin</td><td>Walk on your heels</td><td>"Ankle dorsiflexion 0–20°"</td></tr>
+          <tr><td><strong>Plantarflexion</strong></td><td>plantar + flex-</td><td>Ankle — foot pointed DOWNWARD</td><td>Stand on tiptoe (relevé)</td><td>"Plantarflexion 0–50°"</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout"><strong>Memory Tricks That Work Clinically</strong>Abduction = Away from Body (AB = Away from Body midline). Adduction = ADD yourself back to the body. Supination = hold a bowl of SOUP. Dorsiflexion = pull toes toward DORSAL side (shin/top of foot). Plantarflexion = PLANT your foot downward (tiptoe, ballet).</div>
+    </div>
+  </div>
+
+  <div class="reading-article">
+    <div class="article-chapter"><div class="ch-label">Chapter 3 · Lesson 17 — Goniometer Lab</div><h2>ROM Assessment: AROM, PROM, and the Goniometer</h2></div>
+    <div class="article-body">
+      <p>Range of motion assessment is a core clinical competency for physical therapists, athletic trainers, orthopedic nurses, and sports medicine providers. It quantifies joint function, documents the impact of injury, tracks recovery progress, and provides legal documentation of impairment. The key to accurate ROM documentation is understanding the difference between two types of assessment.</p>
+
+      <h3>AROM vs. PROM: A Critical Clinical Distinction</h3>
+      <p><span class="ht">AROM<span class="ht-tip"><span class="tip-root">Active Range of Motion</span>ROM produced by the PATIENT using their own muscle strength. Tests motor function and pain inhibition.</span></span> (Active Range of Motion) is the movement a patient produces using their own muscular effort — no assistance from the clinician. When a patient can't reach full AROM, it may indicate motor weakness, pain inhibition, or tendon/nerve involvement. <span class="ht">PROM<span class="ht-tip"><span class="tip-root">Passive Range of Motion</span>ROM produced by the CLINICIAN moving the patient's limb. Tests structural joint integrity, not motor function.</span></span> (Passive Range of Motion) is the movement produced when the clinician moves the patient's limb — the patient is relaxed and contributes no effort. PROM tests structural joint integrity and capsular restriction.</p>
+
+      <p>The relationship between AROM and PROM tells you what's wrong: <strong>If PROM &gt; AROM</strong>, the joint can structurally move (PROM shows this) but the patient can't generate that motion — suggesting motor weakness, pain inhibition, or neuromuscular deficit. <strong>If both AROM and PROM are limited equally</strong>, the limitation is structural — a tight capsule, scar tissue, or contracture. Document: <em>"AROM right elbow flexion 110°, PROM 125° — gap suggests pain/motor limitation rather than structural block."</em></p>
+
+      <h3>Goniometer Technique: Four Steps</h3>
+      <p>A <span class="ht">goniometer<span class="ht-tip"><span class="tip-root">Greek: gonia (angle) + metr/o (measure)</span>Clinical instrument used to measure joint angle and range of motion in degrees. Two arms connected at a pivot.</span></span> is a simple hinged instrument with two arms and a degree scale. Proper placement is everything — a misplaced axis produces inaccurate measurements that cannot be compared across clinicians or visits.</p>
+      <ul>
+        <li><strong>Axis placement:</strong> Center the axis of the goniometer at the center of the joint being measured (lateral knee joint line, lateral elbow epicondyle, lateral malleolus for ankle).</li>
+        <li><strong>Stationary arm:</strong> Align with the proximal body segment — the part that does NOT move (femur for knee measurements).</li>
+        <li><strong>Moving arm:</strong> Align with the distal body segment — the part that DOES move (tibia/fibula for knee measurements).</li>
+        <li><strong>Record and compare:</strong> Note the start position, move through full ROM, record the end position in degrees. Always compare bilaterally — the uninjured limb is your reference.</li>
+      </ul>
+
+      <h3>Documenting a ROM Deficit</h3>
+      <p>A <span class="ht">ROM deficit<span class="ht-tip"><span class="tip-root">range of motion + deficit (deficere = to fail)</span>A measurable reduction in joint motion compared to the contralateral limb or established normal values.</span></span> is always documented with both values: <em>"Patient demonstrates 12° dorsiflexion deficit at right ankle compared to left (8° right vs. 20° left)."</em> Never document a deficit without the reference — "limited dorsiflexion" tells you nothing actionable. The comparison number drives the treatment plan and the insurance authorization.</p>
+
+      <table class="clinical-table">
+        <thead><tr><th>Joint</th><th>Motion</th><th>Normal ROM</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>Shoulder</td><td>Flexion / Abduction</td><td>0–180°</td><td>Rotator cuff tears limit AROM more than PROM</td></tr>
+          <tr><td>Elbow</td><td>Flexion / Extension</td><td>0–150° / 0°</td><td>Locked elbow = 0° extension deficit</td></tr>
+          <tr><td>Wrist</td><td>Flexion / Extension</td><td>0–80° / 0–70°</td><td>FOOSH injuries limit extension</td></tr>
+          <tr><td>Knee</td><td>Flexion / Extension</td><td>0–135° / 0°</td><td>Post-op swelling limits early flexion</td></tr>
+          <tr><td>Ankle</td><td>Dorsiflexion / Plantarflexion</td><td>0–20° / 0–50°</td><td>Achilles tendinitis limits dorsiflexion</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- CFU -->
+<div id="cfu" class="panel">
+  <div class="section-title">Check for Understanding</div>
+  <div class="section-sub">5 clinical questions covering movement terms, ROM assessment, and muscle conditions — Board Exam format.</div>
+  <div class="section-divider"></div>
+  <div class="cfu-score-bar">
+    <div><div class="cfu-score-lbl">Score</div><div class="cfu-score-num" id="cfuScore">0 / 0</div></div>
+    <div><div class="cfu-score-lbl">Accuracy</div><div class="cfu-score-num" id="cfuAcc">—</div></div>
+    <button class="cfu-retry" onclick="resetAllCFU()" style="padding:9px 18px;">Reset All</button>
+  </div>
+  <div id="cfuContainer"></div>
+</div>
+
+<!-- VOCAB -->
+<div id="vocab" class="panel">
+  <div class="section-title">Vocabulary Games</div>
+  <div class="section-sub">Three ways to drill your 25 Week 6 terms — plus an interactive movement term explorer.</div>
+  <div class="section-divider"></div>
+
+  <!-- Movement term explorer -->
+  <div style="background:white;border-radius:16px;padding:28px;box-shadow:var(--shadow);margin-bottom:24px;">
+    <h3 style="font-family:'DM Serif Display',serif;font-size:1.15rem;color:var(--primary);margin-bottom:8px;">Movement Term Explorer</h3>
+    <p style="font-size:0.875rem;color:var(--gray);margin-bottom:16px;">Click any movement term to see its full definition and demonstration cue.</p>
+    <div class="movement-grid" id="moveGrid"></div>
+  </div>
+
+  <div class="game-area">
+    <div class="game-tabs">
+      <button class="game-tab active" onclick="showGame('match')">🔗 Term Match</button>
+      <button class="game-tab" onclick="showGame('fill')">✏️ Fill in the Blank</button>
+      <button class="game-tab" onclick="showGame('decode')">🔬 Root Decode</button>
+    </div>
+    <div id="match" class="game-panel active">
+      <div class="match-score">Matched: <span id="matchCount">0</span> / 8</div>
+      <div id="matchInstructions" style="font-size:0.85rem;color:var(--gray);margin-bottom:16px;">Click a term on the left, then its definition on the right.</div>
+      <div class="match-grid">
+        <div><h4>Terms</h4><div id="matchTerms"></div></div>
+        <div><h4>Definitions</h4><div id="matchDefs"></div></div>
+      </div>
+      <button onclick="initMatch()" style="padding:9px 20px;border-radius:8px;border:none;background:var(--primary);color:white;font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:600;cursor:pointer;margin-top:8px;">New Round 🔀</button>
+    </div>
+    <div id="fill" class="game-panel"><div id="fillItems"></div></div>
+    <div id="decode" class="game-panel">
+      <p style="font-size:0.875rem;color:var(--gray);margin-bottom:20px;">Study the word parts. Predict the full clinical meaning, then reveal.</p>
+      <div id="decodeItems"></div>
+    </div>
+  </div>
+</div>
+
+<!-- RESOURCES -->
+<div id="resources" class="panel">
+  <div class="section-title">Resources & Further Learning</div>
+  <div class="section-sub">PT and sports medicine references, career profiles, HOSA prep, and clinical tools for Week 6.</div>
+  <div class="section-divider"></div>
+  <div class="resources-grid">
+    <a class="resource-card" href="https://medlineplus.gov/muscledisorders.html" target="_blank">
+      <div class="rc-type">📚 Reference</div>
+      <div class="rc-title">MedlinePlus — Muscle Disorders</div>
+      <div class="rc-desc">National Library of Medicine overview of muscular conditions — myopathy, muscular dystrophy, myalgia, contracture. Reliable, government-reviewed patient education content.</div>
+      <div class="rc-link">medlineplus.gov →</div>
+    </a>
+    <a class="resource-card" href="https://www.youtube.com/watch?v=e85OJeqUCEU" target="_blank">
+      <div class="rc-type">🎥 Tutorial</div>
+      <div class="rc-title">Goniometry Technique — How to Measure ROM</div>
+      <div class="rc-desc">Clinical demonstration of goniometer placement for multiple joints — knee, elbow, ankle, shoulder. Watch before your lab session to understand axis placement and arm alignment.</div>
+      <div class="rc-link">youtube.com →</div>
+    </a>
+    <a class="resource-card" href="https://www.apta.org/patient-care/interventions/range-of-motion" target="_blank">
+      <div class="rc-type">🏥 Clinical Reference</div>
+      <div class="rc-title">APTA — Range of Motion Assessment</div>
+      <div class="rc-desc">American Physical Therapy Association resource on ROM assessment standards. The APTA sets the clinical guidelines that physical therapists follow — this is the source document.</div>
+      <div class="rc-link">apta.org →</div>
+    </a>
+    <a class="resource-card" href="https://www.youtube.com/watch?v=0YWMbSZDRJA" target="_blank">
+      <div class="rc-type">🎥 Tutorial</div>
+      <div class="rc-title">Osmosis — Muscle Types & Anatomy</div>
+      <div class="rc-desc">Animated breakdown of all three muscle types with microscopy comparisons, clinical conditions, and movement mechanics. 12-minute review covering all Week 6 muscle anatomy.</div>
+      <div class="rc-link">youtube.com →</div>
+    </a>
+    <a class="resource-card" href="https://hosa.org/competitive-events/" target="_blank">
+      <div class="rc-type">🏆 HOSA Prep</div>
+      <div class="rc-title">HOSA — Sports Medicine Event Guidelines</div>
+      <div class="rc-desc">Goniometry is a scored HOSA Sports Medicine skill station. Review the official event guidelines to understand exactly how ROM assessment, movement terminology, and documentation are evaluated.</div>
+      <div class="rc-link">hosa.org →</div>
+    </a>
+    <a class="resource-card" href="https://www.bls.gov/ooh/healthcare/physical-therapists.htm" target="_blank">
+      <div class="rc-type">💼 Career</div>
+      <div class="rc-title">BLS — Physical Therapist Career Profile</div>
+      <div class="rc-desc">ROM assessment and goniometry are day-one PT skills. Salary, education requirements (DPT degree), job outlook, and specializations — ortho, sports, neuro, pediatric PT.</div>
+      <div class="rc-link">bls.gov →</div>
+    </a>
+    <a class="resource-card" href="https://www.bls.gov/ooh/healthcare/athletic-trainers.htm" target="_blank">
+      <div class="rc-type">💼 Career</div>
+      <div class="rc-title">BLS — Athletic Trainer Career Profile</div>
+      <div class="rc-desc">Athletic trainers work in schools, sports teams, and clinics performing the exact ROM assessments and movement documentation you're learning now. Bachelor's degree + BOC certification.</div>
+      <div class="rc-link">bls.gov →</div>
+    </a>
+    <a class="resource-card" href="https://musculoskeletalkey.com/normal-range-of-motion/" target="_blank">
+      <div class="rc-type">📊 Clinical Reference</div>
+      <div class="rc-title">Normal ROM Reference Values</div>
+      <div class="rc-desc">Complete table of normal ROM values for every major joint — shoulder, elbow, wrist, hip, knee, ankle. Bookmark this for your goniometer lab and board exam review.</div>
+      <div class="rc-link">musculoskeletalkey.com →</div>
+    </a>
+    <a class="resource-card" href="https://www.physio-pedia.com/Muscle_Atrophy" target="_blank">
+      <div class="rc-type">🔬 Deep Dive</div>
+      <div class="rc-title">PhysioPedia — Muscle Atrophy</div>
+      <div class="rc-desc">Clinical overview of atrophy — disuse, denervation, and disease causes. Includes measurement techniques, intervention strategies, and documentation standards. Advanced reading.</div>
+      <div class="rc-link">physio-pedia.com →</div>
+    </a>
+  </div>
+</div>
+
+<!-- APPLY IT -->
+<div id="apply" class="panel">
+  <div class="section-title">Apply It — Clinical Scenario</div>
+  <div class="section-sub">Read the ROM assessment findings. Complete each task using your Week 6 clinical vocabulary.</div>
+  <div class="section-divider"></div>
+
+  <div class="scenario-card">
+    <div class="scenario-eyebrow">Sports Medicine Clinic · ROM Assessment · Follow-Up Visit</div>
+    <h2>Patient: Jordan K., 16 — Basketball Ankle Sprain, Week 2 Follow-Up</h2>
+    <p>Jordan returns to the sports medicine clinic two weeks after a right lateral ankle sprain. They have been non-weight bearing and were in an air cast. Today you perform a bilateral ROM assessment using a goniometer. Jordan reports the ankle still feels stiff and the heel is tight going upstairs. No swelling today. Neurovascular intact bilaterally.</p>
+    <table class="rom-table">
+      <thead><tr><th>Motion</th><th>Right Ankle (Injured)</th><th>Left Ankle (Uninjured)</th><th>Finding</th></tr></thead>
+      <tbody>
+        <tr><td>Dorsiflexion — AROM</td><td class="rom-deficit">8°</td><td>20°</td><td class="rom-deficit">12° deficit</td></tr>
+        <tr><td>Dorsiflexion — PROM</td><td class="rom-deficit">14°</td><td>22°</td><td class="rom-deficit">8° deficit</td></tr>
+        <tr><td>Plantarflexion — AROM</td><td>38°</td><td>48°</td><td>10° deficit</td></tr>
+        <tr><td>Plantarflexion — PROM</td><td>44°</td><td>50°</td><td>6° deficit</td></tr>
+        <tr><td>Inversion — AROM</td><td>15°</td><td>30°</td><td>15° deficit</td></tr>
+        <tr><td>Eversion — AROM</td><td>8°</td><td>15°</td><td>7° deficit</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="task-card">
+    <div class="task-num">Task 1 · Interpret the AROM vs. PROM Gap</div>
+    <div class="task-q">For dorsiflexion, AROM is 8° and PROM is 14° on the right side. The gap is 6°. What does this gap tell you clinically? What is the most likely explanation for why the patient can move further passively than actively? Use correct terminology from your reading.</div>
+    <textarea class="task-textarea" placeholder="The 6° gap between AROM and PROM indicates... This most likely means... The clinical term for this pattern is..."></textarea>
+    <button class="task-hint-btn" onclick="toggleHint('h1')">💡 Show Hint</button>
+    <div id="h1" class="task-hint">When PROM &gt; AROM: the joint can structurally move (PROM demonstrates this) but the patient cannot generate that motion actively. This suggests motor weakness, pain inhibition (the patient stops before the structural limit due to pain), or neuromuscular deficit — NOT a structural block. If both were equally limited, you'd suspect a structural issue (contracture, scar tissue).</div>
+  </div>
+
+  <div class="task-card">
+    <div class="task-num">Task 2 · Document the ROM Findings</div>
+    <div class="task-q">Write the Objective (O) section ROM documentation for Jordan K. using correct clinical documentation format. Include all six motions from the table above, document bilaterally, and calculate and state each deficit explicitly. Use the standard deficit documentation phrase format from your reading.</div>
+    <textarea class="task-textarea" placeholder="O: Bilateral ROM assessment performed using goniometer:&#10;Dorsiflexion AROM: R ___°, L ___° — ___° deficit right vs. left.&#10;Dorsiflexion PROM: R ___°, L ___° — ___° deficit.&#10;..." rows="8"></textarea>
+    <button class="task-hint-btn" onclick="toggleHint('h2')">💡 Show Hint</button>
+    <div id="h2" class="task-hint">Format for each: "[Motion] [AROM/PROM]: R [value]°, L [value]° — [deficit]° deficit right compared to left." Always state both values — never just say "limited." The deficit number = L value minus R value. Document AROM and PROM separately where both were measured.</div>
+  </div>
+
+  <div class="task-card">
+    <div class="task-num">Task 3 · Connect to Clinical Conditions</div>
+    <div class="task-q">Jordan reports the heel feels "tight going upstairs" — this is a symptom related to a specific clinical condition you studied this week. Name the condition using the correct medical term, explain what the root words mean, and explain why dorsiflexion is specifically limited in this condition.</div>
+    <textarea class="task-textarea" placeholder="The condition is: ... (root words: ...)&#10;Dorsiflexion is specifically limited because...&#10;Clinical documentation would read:..."></textarea>
+    <button class="task-hint-btn" onclick="toggleHint('h3')">💡 Show Hint</button>
+    <div id="h3" class="task-hint">Tightness in the heel going upstairs = Achilles region. The Achilles tendon connects the gastrocnemius/soleus (calf muscles) to the calcaneus (heel bone). When it is inflamed or tight, it resists being stretched — which is exactly what happens during dorsiflexion (pulling the foot up toward the shin). Think: tendin/o (tendon) + -itis (inflammation).</div>
+  </div>
+
+  <div class="task-card">
+    <div class="task-num">Task 4 · Atrophy Assessment + Documentation</div>
+    <div class="task-q">After two weeks non-weight-bearing, you observe that Jordan's right calf appears visibly smaller than the left. You measure: right calf circumference 30cm, left 33cm. Using the correct clinical term and root word breakdown, document this finding and explain the physiological reason it occurred after immobilization.</div>
+    <textarea class="task-textarea" placeholder="Clinical term: ... (word parts: a- = ..., troph/o = ..., -y = ...)&#10;Documentation: 'Right gastrocnemius/soleus _____ noted...'&#10;Physiological reason: ..."></textarea>
+    <button class="task-hint-btn" onclick="toggleHint('h4')">💡 Show Hint</button>
+    <div id="h4" class="task-hint">Term: atrophy. a- (without) + troph/o (nourishment). When a muscle is not being used actively (non-weight-bearing), the motor nerve signals that maintain muscle fiber size decrease, protein synthesis slows, and fiber cross-sectional area decreases. This begins within 48–72 hours of immobilization. Document: "Gastrocnemius/soleus muscle atrophy noted right lower extremity — 3cm circumference deficit compared to contralateral limb."</div>
+  </div>
+</div>
+
+</main>
+
+<script>
+function showPanel(id){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  const order=['reading','cfu','vocab','resources','apply'];
+  document.querySelectorAll('.nav-btn')[order.indexOf(id)].classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+const cfuData=[
+  {vignette:"A PT documents: 'AROM right elbow flexion 110°, PROM right elbow flexion 125°. AROM left 130°, PROM left 130°.' The gap between AROM and PROM on the right is 15 degrees.",
+   q:"This AROM vs. PROM gap MOST LIKELY indicates:",
+   choices:["A. The goniometer was placed incorrectly during assessment","B. Motor weakness or pain is limiting active movement — the joint can structurally move further","C. Complete tendon rupture requiring immediate surgical consult","D. Normal bilateral variation within acceptable clinical limits"],
+   answer:1,
+   fb_right:"✓ Correct! When PROM &gt; AROM: the joint CAN move passively (structural integrity intact) but the patient CANNOT generate that motion actively — suggests motor weakness, pain inhibition, or neuromuscular deficit.",
+   fb_wrong:"When PROM &gt; AROM: the joint is structurally capable (PROM proves this) but the patient can't produce the motion actively. This = motor/pain limitation, NOT a structural block. Equal AROM and PROM limitation would suggest structural restriction."
+  },
+  {vignette:"A 17-year-old track athlete has posterior heel pain worsening with uphill running. Dorsiflexion: 8° right vs 20° left. The clinician notes the Achilles tendon is thickened on palpation.",
+   q:"The combining form tendin/o in 'Achilles tendinitis' refers to:",
+   choices:["A. Muscle tissue — the gastrocnemius and soleus","B. Fascia — the connective tissue sheath surrounding the calf","C. Tendon — the fibrous cord connecting muscle to bone","D. Ligament — the connective tissue connecting bone to bone"],
+   answer:2,
+   fb_right:"✓ Correct! tendin/o (also ten/o) = tendon. The tendon connects muscle to bone and transmits force. -itis = inflammation. Achilles tendinitis = inflammation of the Achilles tendon from overuse.",
+   fb_wrong:"tendin/o = TENDON (connects muscle to bone). my/o = muscle. fasci/o = fascia (the sheath). Ligaments connect bone to bone — they have a different root word and different injury (sprain vs. strain)."
+  },
+  {vignette:"After 8 weeks in a long leg cast, a patient's right quadriceps is visibly smaller. Circumference: right thigh 42cm, left thigh 46cm. Strength testing: right 2/5, left 5/5.",
+   q:"This decrease in muscle size and strength from immobilization is best described as:",
+   choices:["A. Hypertrophy — increased fiber size from training","B. Atrophy — muscle wasting from disuse","C. Contracture — permanent shortening of tissue","D. Myopathy — disease of the muscle tissue"],
+   answer:1,
+   fb_right:"✓ Correct! Atrophy = muscle wasting. a- (without) + troph/o (nourishment). Disuse after immobilization reduces motor nerve signals, slowing protein synthesis and reducing fiber cross-sectional area.",
+   fb_wrong:"Atrophy = muscle wasting from disuse/immobilization. a- (without) + troph/o (nourishment). Hypertrophy = growth from resistance training. Contracture = permanent shortening. Myopathy = muscle disease — a different category."
+  },
+  {vignette:"An athletic trainer asks a soccer player to raise their right arm directly out to the SIDE (away from the body) to demonstrate shoulder range of motion during a sports physical.",
+   q:"The movement being assessed is called:",
+   choices:["A. Adduction — movement toward the body midline","B. Flexion — decreasing the joint angle, bending","C. Abduction — movement away from the body midline","D. Circumduction — full circular movement at the joint"],
+   answer:2,
+   fb_right:"✓ Correct! Abduction = AWAY from midline. ab- (away) + duct/o (to lead). Memory: ABduction = Away from Body. Raising the arm out to the side = shoulder abduction.",
+   fb_wrong:"Abduction = AWAY from midline (ab- + duct/o). Memory trick: AB = Away from Body. Adduction = toward midline. Flexion = bending (decreasing angle). Circumduction = full circle combining all motions."
+  },
+  {vignette:"A dancer rises to the tips of their toes (relevé position). An athletic trainer documents: 'Foot moves downward, heel rises from floor, 48° of motion at the right ankle.'",
+   q:"This ankle movement is called:",
+   choices:["A. Dorsiflexion — foot pulled upward toward the shin","B. Supination — forearm rotation, palm facing up","C. Plantarflexion — foot/toes pointed downward","D. Eversion — sole of foot turns outward"],
+   answer:2,
+   fb_right:"✓ Correct! Plantarflexion = pointing foot/toes DOWNWARD. plantar (sole of foot) + flex (bend). Rising to tiptoe, ballet pointe, accelerating while running — all plantarflexion.",
+   fb_wrong:"Plantarflexion = foot pointed DOWN (tiptoe, ballet). plantar = sole of foot. Dorsiflexion = foot pulled UP toward shin (walking on heels). Supination = forearm motion (palm up). Eversion = sole turns outward."
+  }
+];
+
+let cfuScores={correct:0,total:0};
+function buildCFU(){
+  const container=document.getElementById('cfuContainer');
+  cfuData.forEach((q,qi)=>{
+    const div=document.createElement('div');div.className='cfu-block';div.id=`cfu_${qi}`;
+    const choicesHtml=q.choices.map((ch,ci)=>`<button class="cfu-choice" data-qi="${qi}" data-ci="${ci}" onclick="answerCFU(${qi},${ci})">${ch}</button>`).join('');
+    div.innerHTML=`<div class="cfu-label">Question ${qi+1} of 5 · Week 6 — Muscular</div><div style="background:var(--primary-l);border-left:3px solid var(--primary);border-radius:0 8px 8px 0;padding:12px 16px;margin-bottom:14px;font-size:0.875rem;color:var(--gray);font-style:italic;line-height:1.6">${q.vignette}</div><div class="cfu-question">${q.q}</div><div class="cfu-choices">${choicesHtml}</div><div class="cfu-feedback" id="cfufb_${qi}"></div><button class="cfu-retry" id="cfuretry_${qi}" style="display:none" onclick="retryCFU(${qi})">↺ Try Again</button>`;
+    container.appendChild(div);
+  });
+}
+function answerCFU(qi,ci){
+  const q=cfuData[qi],isRight=ci===q.answer;
+  document.querySelectorAll(`[data-qi="${qi}"]`).forEach((btn,i)=>{btn.disabled=true;if(i===q.answer)btn.classList.add('correct');else if(i===ci&&!isRight)btn.classList.add('wrong');else btn.classList.add('dimmed');});
+  const fb=document.getElementById(`cfufb_${qi}`);fb.className='cfu-feedback show '+(isRight?'ok':'no');
+  fb.innerHTML=isRight?`<strong>✓ Correct!</strong> ${q.fb_right}`:`<strong>✗ Not quite.</strong> ${q.fb_wrong}`;
+  document.getElementById(`cfuretry_${qi}`).style.display='inline-block';
+  cfuScores.total++;if(isRight)cfuScores.correct++;updateCFUScore();
+}
+function retryCFU(qi){document.querySelectorAll(`[data-qi="${qi}"]`).forEach(btn=>{btn.disabled=false;btn.className='cfu-choice';});document.getElementById(`cfufb_${qi}`).className='cfu-feedback';document.getElementById(`cfuretry_${qi}`).style.display='none';}
+function resetAllCFU(){cfuScores={correct:0,total:0};cfuData.forEach((_,qi)=>retryCFU(qi));updateCFUScore();}
+function updateCFUScore(){document.getElementById('cfuScore').textContent=`${cfuScores.correct} / ${cfuScores.total}`;document.getElementById('cfuAcc').textContent=cfuScores.total>0?Math.round(cfuScores.correct/cfuScores.total*100)+'%':'—';}
+
+const moveTerms=[
+  {term:'Flexion',icon:'🦾',def:'Decreasing joint angle — bending. Elbow toward shoulder.',demo:'Bend elbow to shoulder'},
+  {term:'Extension',icon:'💪',def:'Increasing joint angle — straightening. Opposite of flexion.',demo:'Straighten the knee'},
+  {term:'Abduction',icon:'↔️',def:'AWAY from midline. Raise arm out to side.',demo:'Raise arm out sideways'},
+  {term:'Adduction',icon:'🤝',def:'TOWARD midline. Bring arm back to body.',demo:'Bring arm back to side'},
+  {term:'Pronation',icon:'🖐',def:'Forearm — palm faces DOWN.',demo:'Turn hand face-down on desk'},
+  {term:'Supination',icon:'🤲',def:'Forearm — palm faces UP. Hold soup.',demo:'Turn palm up (hold a bowl)'},
+  {term:'Dorsiflexion',icon:'🦵',def:'Ankle — foot pulled UPWARD toward shin.',demo:'Walk on your heels'},
+  {term:'Plantarflexion',icon:'🩰',def:'Ankle — foot/toes pointed DOWNWARD.',demo:'Stand on tiptoe'},
+];
+
+function buildMoveGrid(){
+  const grid=document.getElementById('moveGrid');
+  moveTerms.forEach((m,i)=>{
+    const card=document.createElement('div');card.className='move-card';
+    card.innerHTML=`<div class="move-icon">${m.icon}</div><div class="move-term">${m.term}</div><div class="move-def">${m.def}</div>`;
+    card.onclick=()=>{
+      document.querySelectorAll('.move-card').forEach(c=>c.classList.remove('active'));
+      card.classList.add('active');
+    };
+    grid.appendChild(card);
+  });
+}
+
+const matchPairs=[
+  {term:'atrophy',def:'Muscle wasting from disuse — a- (without) + troph/o (nourishment)'},
+  {term:'hypertrophy',def:'Increase in muscle size from resistance training — adaptive response'},
+  {term:'AROM',def:'Active Range of Motion — patient produces movement with own muscles'},
+  {term:'PROM',def:'Passive Range of Motion — clinician moves patient\'s limb'},
+  {term:'goniometer',def:'Instrument used to measure joint angle in degrees'},
+  {term:'tendinitis',def:'Tendon inflammation from repetitive overuse — common: Achilles, patellar'},
+  {term:'contracture',def:'Permanent muscle/tendon shortening from prolonged immobilization'},
+  {term:'fasciitis',def:'Fascia inflammation — plantar fasciitis causes heel pain with first steps'},
+  {term:'ROM deficit',def:'Measurable reduction in motion compared to contralateral limb or normal'},
+  {term:'dorsiflexion',def:'Pulling foot/ankle UPWARD toward the shin — walk on heels'},
+  {term:'plantarflexion',def:'Pointing foot/toes DOWNWARD — standing on tiptoe or pushing off'},
+  {term:'abduction',def:'Movement AWAY from body midline — arm raised out to the side'},
+  {term:'myalgia',def:'Muscle pain — localized overuse or diffuse viral/systemic cause'},
+  {term:'spasm',def:'Sudden involuntary muscle contraction — electrolyte imbalance, overuse'},
+  {term:'bilateral',def:'Pertaining to both sides — essential in comparative ROM documentation'},
+];
+const fillBlanks=[
+  {sentence:'A muscle that has WASTED and decreased in size after 6 weeks in a cast has undergone ___.',answer:'atrophy',alt:['atrophy'],hint:'a- (without) + troph/o (nourishment)'},
+  {sentence:'The range of motion a patient achieves using their OWN muscle strength is called ___ (abbreviation).',answer:'AROM',alt:['arom','active range of motion'],hint:'A___ R___ O___ M___'},
+  {sentence:'The clinical instrument used to measure joint angle in degrees is called a ___.',answer:'goniometer',alt:['goniometer'],hint:'gonia (angle) + metr/o (measure)'},
+  {sentence:'When the ankle is pulled UPWARD toward the shin, this motion is called ___.',answer:'dorsiflexion',alt:['dorsiflexion'],hint:'dorsi- (back/top) + flexion (bending)'},
+  {sentence:'Movement AWAY from the body midline — such as raising your arm out to the side — is called ___.',answer:'abduction',alt:['abduction'],hint:'ab- (away) + duct/o (to lead)'},
+  {sentence:'Inflammation of the connective tissue sheath surrounding muscles — causing heel pain with first steps — is called plantar ___.',answer:'fasciitis',alt:['fasciitis'],hint:'fasci/o (fascia) + -itis (inflammation)'},
+];
+const decodeTerms=[
+  {term:'atrophy',parts:[{text:'a-',type:'dp-prefix',meaning:'without'},{text:'troph/o',type:'dp-root',meaning:'nourishment/growth'},{text:'-y',type:'dp-suffix',meaning:'condition of'}],full:'Condition of muscle wasting or decrease in size due to lack of use, innervation, or nourishment. Common after casting or prolonged immobilization.'},
+  {term:'hypertrophy',parts:[{text:'hyper-',type:'dp-prefix',meaning:'excessive/above'},{text:'troph/o',type:'dp-root',meaning:'nourishment/growth'},{text:'-y',type:'dp-suffix',meaning:'condition of'}],full:'Increase in muscle fiber size from repeated resistance loading. Normal adaptive response to training — not pathological. Opposite of atrophy.'},
+  {term:'dorsiflexion',parts:[{text:'dorsi-',type:'dp-prefix',meaning:'back/dorsum'},{text:'flex',type:'dp-root',meaning:'to bend'},{text:'-ion',type:'dp-suffix',meaning:'action/process'}],full:'Action of bending the ankle so the foot/toes move toward the shin (dorsal surface). Walking on heels, going upstairs. Normal: 0–20°. Limited by Achilles tightness.'},
+  {term:'abduction',parts:[{text:'ab-',type:'dp-prefix',meaning:'away from'},{text:'duct/o',type:'dp-root',meaning:'to lead/draw'},{text:'-ion',type:'dp-suffix',meaning:'action/process'}],full:'Movement of a limb away from the body midline. Raising the arm laterally, spreading the legs. Opposite of adduction (ad- = toward).'},
+  {term:'tendinitis',parts:[{text:'tendin/o',type:'dp-root',meaning:'tendon'},{text:'-itis',type:'dp-suffix',meaning:'inflammation'}],full:'Inflammation of a tendon from repetitive overuse or acute injury. Most common: Achilles, patellar, rotator cuff. Treated with activity modification, ice, eccentric strengthening.'},
+  {term:'myalgia',parts:[{text:'my/o',type:'dp-root',meaning:'muscle'},{text:'-algia',type:'dp-suffix',meaning:'pain'}],full:'Muscle pain. Can be localized (overuse, strain) or diffuse (viral illness, medication side effect like statin-induced myopathy). Document location, onset, severity.'},
+];
+
+let selectedTerm=null,selectedDef=null,matched=0,currentMatchPairs=[];
+function initMatch(){
+  matched=0;document.getElementById('matchCount').textContent='0';selectedTerm=null;selectedDef=null;
+  const shuffled=[...matchPairs].sort(()=>Math.random()-.5).slice(0,8);currentMatchPairs=shuffled;
+  const defShuffled=[...shuffled].sort(()=>Math.random()-.5);
+  document.getElementById('matchTerms').innerHTML='';document.getElementById('matchDefs').innerHTML='';
+  shuffled.forEach((p,i)=>{const t=document.createElement('div');t.className='match-item';t.textContent=p.term;t.dataset.idx=i;t.onclick=()=>selectMatchTerm(t,i);document.getElementById('matchTerms').appendChild(t);});
+  defShuffled.forEach(p=>{const idx=shuffled.findIndex(x=>x.term===p.term);const d=document.createElement('div');d.className='match-item';d.textContent=p.def;d.dataset.idx=idx;d.onclick=()=>selectMatchDef(d,idx);document.getElementById('matchDefs').appendChild(d);});
+}
+function selectMatchTerm(el,idx){if(el.classList.contains('matched'))return;document.querySelectorAll('#matchTerms .match-item:not(.matched)').forEach(b=>b.classList.remove('selected'));el.classList.add('selected');selectedTerm={el,idx};checkMatch();}
+function selectMatchDef(el,idx){if(el.classList.contains('matched'))return;document.querySelectorAll('#matchDefs .match-item:not(.matched)').forEach(b=>b.classList.remove('selected'));el.classList.add('selected');selectedDef={el,idx};checkMatch();}
+function checkMatch(){
+  if(!selectedTerm||!selectedDef)return;
+  if(selectedTerm.idx===selectedDef.idx){selectedTerm.el.classList.remove('selected');selectedTerm.el.classList.add('matched');selectedDef.el.classList.remove('selected');selectedDef.el.classList.add('matched');matched++;document.getElementById('matchCount').textContent=matched;selectedTerm=null;selectedDef=null;if(matched===8)setTimeout(()=>alert('🎉 All 8 matched! Click "New Round" for a fresh set.'),200);}
+  else{selectedTerm.el.classList.add('wrong-flash');selectedDef.el.classList.add('wrong-flash');setTimeout(()=>{[selectedTerm.el,selectedDef.el].forEach(el=>{el.classList.remove('wrong-flash','selected');});selectedTerm=null;selectedDef=null;},600);}
+}
+function buildFill(){
+  const container=document.getElementById('fillItems');
+  fillBlanks.forEach((item,i)=>{const div=document.createElement('div');div.className='fill-item';div.innerHTML=`<div class="fill-sentence">${item.sentence}</div><input class="fill-input" id="fill_${i}" placeholder="type your answer..." autocomplete="off"><button class="fill-check" onclick="checkFill(${i})">Check</button><div class="fill-hint">${item.hint}</div><div id="fillfb_${i}" style="font-size:0.82rem;margin-top:8px;display:none;"></div>`;container.appendChild(div);});
+}
+function checkFill(i){const input=document.getElementById(`fill_${i}`);const val=input.value.trim().toLowerCase();const item=fillBlanks[i];const isRight=item.alt.map(a=>a.toLowerCase()).some(a=>val.includes(a));input.className='fill-input '+(isRight?'correct-in':'wrong-in');const fb=document.getElementById(`fillfb_${i}`);fb.style.display='block';fb.style.color=isRight?'var(--correct)':'var(--wrong)';fb.textContent=isRight?'✓ Correct!':'✗ Answer: '+item.answer;}
+function buildDecode(){
+  const container=document.getElementById('decodeItems');
+  decodeTerms.forEach((item,i)=>{const partsHtml=item.parts.map(pt=>`<span class="decode-part ${pt.type}" title="${pt.meaning}">${pt.text}</span>`).join(' + ');const div=document.createElement('div');div.className='decode-item';div.innerHTML=`<div class="decode-term">${item.term}</div><div class="decode-parts">${partsHtml}</div><button class="decode-reveal" onclick="revealDecode(${i})">Reveal Full Meaning</button><div id="dec_${i}" class="decode-answer">${item.full}</div>`;container.appendChild(div);});
+}
+function revealDecode(i){const el=document.getElementById(`dec_${i}`);el.classList.toggle('show');el.previousElementSibling.textContent=el.classList.contains('show')?'Hide Meaning':'Reveal Full Meaning';}
+function showGame(id){document.querySelectorAll('.game-panel').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.game-tab').forEach(b=>b.classList.remove('active'));document.getElementById(id).classList.add('active');event.target.classList.add('active');}
+function toggleHint(id){document.getElementById(id).classList.toggle('show');}
+document.addEventListener('DOMContentLoaded',()=>{buildCFU();initMatch();buildFill();buildDecode();buildMoveGrid();});
+</script>
+</body>
+</html>
